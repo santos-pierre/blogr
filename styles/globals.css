@@ -1,0 +1,30 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Text Color */
+        --color-text-primary: hsl(356, 100%, 66%);
+        --color-text-base: hsl(0, 0%, 100%);
+        --color-text-heading: hsl(208, 49%, 24%);
+        --color-text-neutral-inverted: hsl(240, 2%, 79%);
+        --color-text-neutral-body: hsl(207, 13%, 34%);
+
+        /* Background Color */
+        --color-background-base: hsl(0, 0%, 100%);
+        --color-background-neutral: hsl(240, 10%, 16%);
+        --color-background-hover: hsl(355, 100%, 74%);
+
+        /* Gradient Color */
+        --color-gradient-primary-start: hsl(13, 100%, 72%);
+        --color-gradient-primary-end: hsl(353, 100%, 62%);
+
+        --color-gradient-neutral-start: hsl(237, 17%, 21%);
+        --color-gradient-neutral-end: hsl(237, 23%, 32%);
+    }
+}
