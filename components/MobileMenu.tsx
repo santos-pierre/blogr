@@ -1,6 +1,8 @@
 import { Popover, Transition } from '@headlessui/react';
 import { Link } from 'interfaces';
 import { Fragment } from 'react';
+import HamburgerIcon from './ui/icons/HamburgerIcon';
+import XIcon from './ui/icons/XIcon';
 import NavLink from './ui/NavLink';
 
 type MobileMenuProps = {
@@ -9,30 +11,22 @@ type MobileMenuProps = {
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ links }) => {
     return (
-        <Popover>
+        <Popover className="sm:hidden block">
             {({ open }) => (
                 <>
                     <Popover.Button className="p-2 inline-flex items-center justify-center outline-none focus:outline-none">
-                        <svg
-                            width="32"
-                            height="18"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className={open ? 'hidden' : 'block'}
-                        >
-                            <g fill="#FFF" fillRule="evenodd">
-                                <path d="M0 0h32v2H0zM0 8h32v2H0zM0 16h32v2H0z" />
-                            </g>
-                        </svg>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className={`${open ? 'block' : 'hidden'} h-8 w-auto -mt-1`}
-                        >
-                            <path
-                                d="M23.607.98l1.414 1.413L14.414 13l10.607 10.607-1.414 1.414L13 14.414 2.393 25.021.98 23.607 11.586 13 .98 2.393 2.393.98 13 11.586 23.607.98z"
-                                fill="#FFF"
-                                fillRule="evenodd"
-                            />
-                        </svg>
+                        {/* Hamburger Icon */}
+                        <HamburgerIcon
+                            className={`w-[32px] h-[18px] ${
+                                open ? 'hidden' : 'block'
+                            } text-white fill-current`}
+                            fillRule="evenodd"
+                        />
+                        {/* X Icon */}
+                        <XIcon
+                            className={`${open ? 'block' : 'hidden'} h-8 w-8 -mt-1 text-white fill-current`}
+                            fillRule="evenodd"
+                        />
                     </Popover.Button>
 
                     <Transition

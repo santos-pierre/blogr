@@ -1,5 +1,6 @@
 import { Disclosure } from '@headlessui/react';
 import React from 'react';
+import ChevronIcon from './icons/ChevronIcon';
 
 type NavLinkProps = {
     name: string;
@@ -17,7 +18,12 @@ const NavLink: React.FC<NavLinkProps> = ({ name, subLinks }) => {
                         }`}
                     >
                         <span>{name}</span>
-                        <svg
+                        <ChevronIcon
+                            className={`${open ? 'transform rotate-180' : ''} ${
+                                subLinks.length !== 0 ? 'block' : 'hidden'
+                            } text-[#FF7B86] h-[7px] w-[10px] stroke-current stroke-2`}
+                        />
+                        {/* <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="10"
                             height="7"
@@ -26,7 +32,7 @@ const NavLink: React.FC<NavLinkProps> = ({ name, subLinks }) => {
                             }`}
                         >
                             <path fill="none" stroke="#FF7B86" stroke-width="2" d="M1 1l4 4 4-4" />
-                        </svg>
+                        </svg> */}
                     </Disclosure.Button>
                     <Disclosure.Panel className="py-6 text-sm text-skin-heading rounded-lg bg-skin-neutral-inverted flex flex-col space-y-5">
                         {subLinks.map((name: string) => {
