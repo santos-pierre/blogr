@@ -19,6 +19,7 @@
         --color-background-base: hsl(0, 0%, 100%);
         --color-background-neutral: hsl(240, 10%, 16%);
         --color-background-hover: hsl(355, 100%, 74%);
+        --color-background-neutral-inverted: hsl(240, 2%, 79%, 0.3);
 
         /* Gradient Color */
         --color-gradient-primary-start: hsl(13, 100%, 72%);
