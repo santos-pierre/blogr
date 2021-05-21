@@ -1,9 +1,10 @@
 import { Popover, Transition } from '@headlessui/react';
 import { Link } from 'interfaces';
 import { Fragment } from 'react';
+import AuthAside from './ui/AuthAside';
 import HamburgerIcon from './ui/icons/HamburgerIcon';
 import XIcon from './ui/icons/XIcon';
-import NavLink from './ui/NavLink';
+import MobileNavLink from './ui/MobileNavLink';
 
 type MobileMenuProps = {
     links: Link[];
@@ -11,7 +12,7 @@ type MobileMenuProps = {
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ links }) => {
     return (
-        <Popover className="sm:hidden block">
+        <Popover className="desktop:hidden block">
             {({ open }) => (
                 <>
                     <Popover.Button className="p-2 inline-flex items-center justify-center outline-none focus:outline-none">
@@ -42,20 +43,15 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ links }) => {
                             <div className="flex flex-col space-y-6 justify-center text-center py-10 px-5 mx-5 bg-white rounded-lg shadow-xl">
                                 {links.map((link: Link) => {
                                     return (
-                                        <NavLink name={link.name} subLinks={link.subLinks} key={link.name} />
+                                        <MobileNavLink
+                                            name={link.name}
+                                            subLinks={link.subLinks}
+                                            key={link.name}
+                                        />
                                     );
                                 })}
                                 <hr className="mb-5" />
-                                <div className="flex flex-col space-y-8 pt-4">
-                                    <span className="text-2xl font-body font-semibold text-skin-heading">
-                                        <a href="#">Login</a>
-                                    </span>
-                                    <button type="button">
-                                        <span className="inline rounded-full py-4 px-10 font-utility text-skin-base bg-gradient-to-r from-skin-primary-start to-skin-primary-end font-semibold text-xl">
-                                            <a href="#">Sign Up</a>
-                                        </span>
-                                    </button>
-                                </div>
+                                <AuthAside />
                             </div>
                         </Popover.Panel>
                     </Transition>

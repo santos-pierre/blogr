@@ -15,6 +15,7 @@ module.exports = {
             },
             backgroundColor: {
                 skin: {
+                    base: `var(--color-background-base)`,
                     neutral: `var(--color-background-neutral)`,
                     'neutral-inverted': `var(--color-background-neutral-inverted)`,
                     hover: `var(--color-background-base)`,
@@ -32,6 +33,9 @@ module.exports = {
             fontFamily: {
                 body: ['Overpass'],
                 utility: ['Ubuntu'],
+            },
+            screens: {
+                desktop: '1440px',
             },
         },
     },
