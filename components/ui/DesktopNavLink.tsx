@@ -9,7 +9,7 @@ type DesktopNavLinkProps = {
 
 const DesktopNavLink: React.FC<DesktopNavLinkProps> = ({ name, subLinks }) => {
     return (
-        <Popover className="relative">
+        <Popover className="relative z-10">
             {({ open }) => (
                 <>
                     <Popover.Button className="flex items-center space-x-2 relative focus:outline-none">
@@ -31,9 +31,12 @@ const DesktopNavLink: React.FC<DesktopNavLinkProps> = ({ name, subLinks }) => {
                     >
                         <Popover.Panel>
                             <div className="flex flex-col absolute rounded-lg bg-skin-base top-11 shadow-xl -left-5 py-7 px-6 space-y-4 w-48 cursor-pointer">
-                                {subLinks.map((name: string) => {
+                                {subLinks.map((name: string, index: number) => {
                                     return (
-                                        <span className="font-utility text-skin-heading font-medium hover:font-bold">
+                                        <span
+                                            className="font-utility text-skin-heading font-medium hover:font-bold"
+                                            key={`${name}-${index}-desktop-link`}
+                                        >
                                             {name}
                                         </span>
                                     );

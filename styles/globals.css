@@ -4,6 +4,31 @@
 
 @tailwind base;
 @tailwind components;
+
+#header-intro {
+    background-image: url('/assets/images/bg-pattern-intro.svg'),
+        linear-gradient(to right, var(--color-gradient-primary-start), var(--color-gradient-primary-end));
+    background-position: top 52% left 28%;
+    background-repeat: no-repeat;
+    background-size: 200% auto, cover;
+    border-bottom-left-radius: 8.5rem;
+}
+
+@media screen and (max-width: 375px) {
+    #header-intro {
+        background-image: url('/assets/images/bg-pattern-intro.svg'),
+            linear-gradient(
+                130deg,
+                var(--color-gradient-primary-start) 10%,
+                var(--color-gradient-primary-end) 100%
+            );
+        background-position: top 38% left 34.5%;
+        background-repeat: no-repeat;
+        background-size: 400% auto, cover;
+        border-bottom-left-radius: 8.5rem;
+    }
+}
+
 @tailwind utilities;
 
 @layer base {

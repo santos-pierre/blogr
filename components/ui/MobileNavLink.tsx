@@ -25,9 +25,12 @@ const MobileNavLink: React.FC<MobileNavLinkProps> = ({ name, subLinks }) => {
                         />
                     </Disclosure.Button>
                     <Disclosure.Panel className="py-6 text-sm text-skin-heading rounded-lg bg-skin-neutral-inverted flex flex-col space-y-5">
-                        {subLinks.map((name: string) => {
+                        {subLinks.map((name: string, index: number) => {
                             return (
-                                <span className="font-body text-xl font-semibold opacity-75 hover:opacity-100">
+                                <span
+                                    className="font-body text-xl font-semibold opacity-75 hover:opacity-100"
+                                    key={`${name}-${index}-mobile-link`}
+                                >
                                     {name}
                                 </span>
                             );

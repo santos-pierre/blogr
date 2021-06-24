@@ -11,9 +11,19 @@ module.exports = {
                     heading: `var(--color-text-heading)`,
                     'neutral-inverted': `var(--color-text-neutral-inverted)`,
                     'neutral-body': `var(--color-text-neutral-body)`,
+                    hover: `var(--color-background-hover)`,
                 },
             },
             backgroundColor: {
+                skin: {
+                    base: `var(--color-background-base)`,
+                    neutral: `var(--color-background-neutral)`,
+                    'neutral-inverted': `var(--color-background-neutral-inverted)`,
+                    hover: `var(--color-background-base)`,
+                    'hover-inverted': `var(--color-background-hover)`,
+                },
+            },
+            borderColor: {
                 skin: {
                     base: `var(--color-background-base)`,
                     neutral: `var(--color-background-neutral)`,

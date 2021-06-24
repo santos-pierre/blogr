@@ -39,14 +39,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ links }) => {
                         leaveFrom="opacity-100 translate-y-0"
                         leaveTo="opacity-0 translate-y-1"
                     >
-                        <Popover.Panel className="absolute z-10 inset-0 overflow-y-auto top-28">
+                        <Popover.Panel className="absolute z-10 inset-0 top-28">
                             <div className="flex flex-col space-y-6 justify-center text-center py-10 px-5 mx-5 bg-white rounded-lg shadow-xl">
                                 {links.map((link: Link) => {
                                     return (
                                         <MobileNavLink
                                             name={link.name}
                                             subLinks={link.subLinks}
-                                            key={link.name}
+                                            key={`${link.name}-mobile`}
                                         />
                                     );
                                 })}
