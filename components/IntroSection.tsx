@@ -4,15 +4,29 @@ import Paragraph from './ui/Paragraph';
 
 const IntroSection = () => {
     return (
-        <section className="relative my-44">
-            <Title center additionalStyle="">
+        <section className="relative desktop:my-44 my-16 desktop:px-0 px-5">
+            <Title center additionalStyle="deskktop:mb-0 mb-10">
                 Designed for the future
             </Title>
-            <div className="flex items-center ml-80 h-[80vh]">
-                {/* Text Section */}
-                <div className="flex flex-col w-2/5 space-y-20">
+            {/* width="406" height="331" */}
+            <div className="flex flex-col desktop:flex-row items-center dektop:ml-80 desktop:h-[80vh] space-y-14 desktop:space-y-0">
+                <div
+                    className="desktop:hidden block"
+                    style={{
+                        width: '406px',
+                        height: '331px',
+                        backgroundImage: "url('/assets/images/illustration-editor-mobile.svg')",
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: '100%',
+                        backgroundPosition: 'center',
+                    }}
+                ></div>
+                <div className="flex flex-col desktop:w-2/5 w-full space-y-20 desktop:ml-80">
                     <div className="space-y-6">
-                        <SubTitle>Introducing an extensible editor</SubTitle>
+                        <SubTitle>
+                            Introducing an <br className="desktop:hidden block" />
+                            extensible editor
+                        </SubTitle>
                         <Paragraph>
                             Blogr features an exceedingly intuitive interface which lets you focus on one
                             thing: creating content. The editor supports management of multiple blogs and
@@ -22,7 +36,9 @@ const IntroSection = () => {
                         </Paragraph>
                     </div>
                     <div className="space-y-6">
-                        <SubTitle>Robust content management</SubTitle>
+                        <SubTitle>
+                            Robust content <br className="desktop:hidden block" /> management
+                        </SubTitle>
                         <Paragraph>
                             Flexible content management enables users to easily move through posts. Increase
                             the usability of your blog by adding customized categories, sections, format, or
